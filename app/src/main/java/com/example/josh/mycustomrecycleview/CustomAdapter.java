@@ -51,14 +51,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.AndroidVer
         ImageView logo;
         TextView codeName, version, api, date;
 
-        public AndroidVersionViewHolder(View itemView) {
-            super(itemView);
+        public AndroidVersionViewHolder(View view) {
+            super(view);
 
-            logo = (ImageView) itemView.findViewById(R.id.iv_logo);
-            codeName = (TextView) itemView.findViewById(R.id.tv_codename);
-            version = (TextView) itemView.findViewById(R.id.tv_version);
-            api = (TextView) itemView.findViewById(R.id.tv_api);
-            date = (TextView) itemView.findViewById(R.id.tv_rd);
+            logo = (ImageView) view.findViewById(R.id.iv_logo);
+            codeName = (TextView) view.findViewById(R.id.tv_codename);
+            version = (TextView) view.findViewById(R.id.tv_version);
+            api = (TextView) view.findViewById(R.id.tv_api);
+            date = (TextView) view.findViewById(R.id.tv_rd);
         }
     }
 }
