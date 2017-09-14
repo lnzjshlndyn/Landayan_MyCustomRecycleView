@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView rvAndroidVesions;
+    RecyclerView rvAndroidVersions;
     int[] logo;
     String[] codename, version, api, date;
     ArrayList<AndroidVersion> list;
@@ -23,20 +23,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvAndroidVesions = (RecyclerView) findViewById(R.id.recycleview);
+        rvAndroidVersions = (RecyclerView) findViewById(R.id.recycleview);
         logo = new int[]{
                 R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake,
-                R.drawable.cupcake
+                R.drawable.eclair,
+                R.drawable.froyo,
+                R.drawable.gingerbread,
+                R.drawable.honeycomb,
+                R.drawable.icecreamsandwich,
+                R.drawable.jellybean,
+                R.drawable.kitkat,
+                R.drawable.lollipop,
+                R.drawable.marshmallow,
+                R.drawable.nougat,
+                R.drawable.oreo
                 };
 
         codename = getResources().getStringArray(R.array.codename);
@@ -47,16 +47,14 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<AndroidVersion>();
 
         layoutManager = new LinearLayoutManager(this);
-        //layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        //layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
-        rvAndroidVesions.setLayoutManager(layoutManager);
-        rvAndroidVesions.setHasFixedSize(true);
+        rvAndroidVersions.setLayoutManager(layoutManager);
+        //rvAndroidVersions.setHasFixedSize(true);
         for(int i = 0; i < codename.length; i++){
-            new AndroidVersion(logo[i], codename[i], version[i], api[i], date[i]);
+            list.add(new AndroidVersion(logo[i], codename[i], version[i], api[i], date[i]));
         }
 
         adapter = new CustomAdapter(list);
 
-        rvAndroidVesions.setAdapter(adapter);
+        rvAndroidVersions.setAdapter(adapter);
     }
 }
